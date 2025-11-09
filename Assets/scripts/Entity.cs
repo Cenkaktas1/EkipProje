@@ -7,7 +7,7 @@ public class Entity : MonoBehaviour
 {
     //HAREKET
     [SerializeField] protected float hareketHizi = 6f;
-    private float yatayGirdi;       // Girdiyi depolamak i�in bir de�i�ken
+    private float yatayGirdi;       
     protected Rigidbody2D rb;
     protected bool control = true;
     protected float EnemyX = 1;
@@ -46,7 +46,7 @@ public class Entity : MonoBehaviour
     {
         if (animator.transform == null)
         {
-            // Player yok olmuş olabilir, bu yüzden transform'u kontrol ediyorsunuz...
+            // Player yok olmuş olabilir, bu yüzden transform'u kontrol ediyoruz
             return;
         }
         GroundCheck();
@@ -59,8 +59,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Hareket()
     {   
-        // "Horizontal" eksenini kullan ve anl�k tepki i�in 'Raw' tercih et
-        yatayGirdi = Input.GetAxisRaw("Horizontal"); // -1, 0, veya 1 d�ner
+        yatayGirdi = Input.GetAxisRaw("Horizontal"); // -1, 0, veya 1 doner
         if (control && IsDeath)
             rb.linearVelocity = new Vector2(yatayGirdi * hareketHizi, rb.linearVelocity.y);
         else
@@ -124,7 +123,7 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        CanBarı.value += 15; // NOT: Bu canı ARTIRIR. Emin misiniz? Belki '-= 15' olmalı?
+        CanBarı.value += 15;
         text.text = $"{100 - CanBarı.value}";
         Debug.Log("Can barı güncellendi. Yeni Değer: " + CanBarı.value); // 4. Bu log görünüyor mu?
     }
