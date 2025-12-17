@@ -32,7 +32,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI text;
 
     [Header("Death")]
-    [SerializeField] protected bool IsDeath;
+    [SerializeField] protected bool IsAlive;
 
     protected virtual void Awake()
     {
@@ -55,42 +55,66 @@ public class Entity : MonoBehaviour
         animationofPlayer();
         Attacking();
         IsDeathControl();
+        Dash();
     }
 
     protected virtual void Hareket()
     {   
         yatayGirdi = Input.GetAxisRaw("Horizontal"); // -1, 0, veya 1 doner
-        if (control && IsDeath)
+        if (control && IsAlive)
             rb.linearVelocity = new Vector2(yatayGirdi * hareketHizi, rb.linearVelocity.y);
         else
             rb.linearVelocity = new Vector2(0, 0);  
 
-        if (yatayGirdi == -1 && IsDeath)
+        if (yatayGirdi == -1 && IsAlive)
             transform.eulerAngles = new Vector2(0, 180);
-        else if (yatayGirdi == 1 && IsDeath)
+        else if (yatayGirdi == 1 && IsAlive)
             transform.eulerAngles = new Vector2(0, 0);
     }
     private void jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGround && control && IsDeath)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGround && control && IsAlive)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 10f);
         }
-        if (Input.GetKey(KeyCode.LeftShift) && IsGround && IsDeath) 
+        if (Input.GetKey(KeyCode.LeftShift) && IsGround && IsAlive) 
             hareketHizi = 10f;
         if (Input.GetKeyUp(KeyCode.LeftShift))
             hareketHizi = 6f;
     }
+
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && IsAlive && IsGround && control)
+            animator.SetTrigger("Dash");
+    }
+
     protected virtual void Attacking()
     {
-        if(Input.GetMouseButtonDown(0) && IsGround && IsDeath)
+        if(Input.GetMouseButtonDown(0) && IsGround && IsAlive)
                 animator.SetTrigger("Attack");
     }
+    // Entity.cs içinde (Player için çalışan kısım)
+
     public void TargetDedector()
     {
-        EnemiesCollider = Physics2D.OverlapCircle(AttackPoint.position, AttackRadius, Target);
+        // 1. Saldırı alanındaki TÜM objeleri bul (Sadece birini değil)
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, Target);
 
-        
+        // 2. Bulunan her bir obje için işlem yap
+        foreach (Collider2D enemyCollider in hitEnemies)
+        {
+            // 3. Çarptığımız objenin üzerindeki "Enemy" scriptini al
+            // (Bu sayede kopyasına vurduysak kopyasının scriptini, ana objeye vurduysak onun scriptini alırız)
+            Enemy hitEnemy = enemyCollider.GetComponent<Enemy>();
+
+            if (hitEnemy != null)
+            {
+                // 4. Sadece bulduğumuz O düşmana hasar ver
+                hitEnemy.TakeDamage();
+                hitEnemy.StartDamageAnimation(); // Eğer animasyonu da buradan tetikliyorsan
+            }
+        }
     }
     public virtual void StartDamageAnimation()
     {
@@ -101,7 +125,7 @@ public class Entity : MonoBehaviour
             Debug.LogError("ANIMATOR DEĞİŞKENİ 'NULL'!"); // 2. Bu hata çıkıyor mu?
             return;
         }
-        if (IsDeath) 
+        if (IsAlive) 
         { 
             animator.SetTrigger("TakeDamage");
             Debug.Log("TakeDamage trigger'ı ateşlendi."); // 3. Bu log görünüyor mu?
@@ -131,14 +155,14 @@ public class Entity : MonoBehaviour
     {
         animator2.SetTrigger("Death");
         //Destroy(gameObject);
-        animator.SetBool("Alive", IsDeath);
+        animator.SetBool("Alive", IsAlive);
     }
     protected virtual void GroundCheck()
     {
         IsGround = Physics2D.Raycast(transform.position, Vector2.down, TouchingGround, GroundLayer);
     }
     protected void animationofPlayer()
-    {   if (IsDeath)
+    {   if (IsAlive)
         {
             animator.SetFloat("xVelocity", yatayGirdi);
             animator.SetFloat("yVelocity", rb.linearVelocity.y);
@@ -154,5 +178,5 @@ public class Entity : MonoBehaviour
     {
         control = hareket;
     }
-    protected virtual void IsDeathControl() => IsDeath = CanBarı.value < 100;
+    protected virtual void IsDeathControl() => IsAlive = CanBarı.value < 100;
 }

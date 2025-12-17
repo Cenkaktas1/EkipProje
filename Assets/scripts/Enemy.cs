@@ -21,6 +21,7 @@ public class Enemy : Entity
         animator = GetComponentInChildren<Animator>();
         FindPlayer = GameObject.FindWithTag("Player");
         FollowPlayer = FindPlayer.GetComponent<Transform>();
+        IsAlive = false;
     }
     protected override void Update()
     {
@@ -39,7 +40,7 @@ public class Enemy : Entity
     {
         Yon = FollowPlayer.position - transform.position;
         Yon.Normalize();
-        if (control && IsDeath) { 
+        if (control && IsAlive) { 
             rb.linearVelocity = new Vector2(Yon.x * 2f, rb.linearVelocity.y);
             if (Yon.x < 0)
                 transform.eulerAngles = new Vector3(0, 180, 0);
@@ -66,29 +67,56 @@ public class Enemy : Entity
             playerCheck = Physics2D.Raycast(transform.position, Vector2.right, -AttackGizmos, Player);
     }
     protected override void Attacking()
-    {   if (!IsDeath)
+    {   if (!IsAlive)
             return;
-        if (playerCheck && IsDeath)
+        if (playerCheck && IsAlive)
             animator.SetTrigger("Attack");
     }
+
     public override void TakeDamage()
     {
-        Debug.LogWarning("Take Damage çalýþtý");
-        if (IsDeath)
+        // Eðer zaten öldüyse tekrar hasar almasýn
+        if (!IsAlive) return;
+
+        // Caný azalt
+        Health -= 1;
+
+        // Animasyonu tetikle (Hasar alma)
+        animator.SetTrigger("TakeDamage");
+
+        // Eðer can 0 veya altýna düþtüyse ÖLÜMÜ BAÞLAT
+        if (Health <= 0)
         {
-            Health -= 1;
-            Debug.LogWarning("Düþman hasar aldý");
+            Death();
         }
     }
-    public override void StartDamageAnimation()
-    {   
-        if(IsDeath)
-            animator.SetTrigger("TakeDamage");
-    }
+
     public override void Death()
     {
+        // 1. Durum güncellemesi
+        IsAlive = false; // Artýk yaþamýyor
+
+        // 2. Ölüm Animasyonu
         animator.SetTrigger("Death");
-        animator.SetBool("Alive", IsDeath);
+        animator.SetBool("Alive", false);
+
+        // 3. Fiziksel Etkileþimi Kes (Ýsteðe baðlý ama önerilir)
+        // Düþman ölünce cesedine takýlmamak veya tekrar vurmamak için Collider'ý kapatabilirsin
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+        if (rb != null)
+        {
+            rb.gravityScale = 0; // Yerçekimini sýfýrla (Havada asýlý kalsýn)
+            rb.linearVelocity = Vector2.zero; // Eðer hareket halindeyse dursun
+
+            // Alternatif olarak tamamen fiziði dondurmak için þunu da yapabilirsin:
+            // rb.bodyType = RigidbodyType2D.Kinematic; 
+        }
+
+        // 4. YOK ETME (EN ÖNEMLÝ KISIM)
+        // "gameObject" bu scriptin baðlý olduðu nesnedir.
+        // 2.5f saniye bekler (animasyon bitsin diye), sonra kendini yok eder.
+        Destroy(gameObject, 2.5f);
     }
-    protected override void IsDeathControl() => IsDeath = Health > 0;
+    protected override void IsDeathControl() => IsAlive = Health > 0;
 }
