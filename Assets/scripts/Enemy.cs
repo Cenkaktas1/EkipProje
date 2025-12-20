@@ -42,6 +42,7 @@ public class Enemy : Entity
         Yon.Normalize();
         if (control && IsAlive) { 
             rb.linearVelocity = new Vector2(Yon.x * 2f, rb.linearVelocity.y);
+            animator.SetFloat("Blend", Yon.x);
             if (Yon.x < 0)
                 transform.eulerAngles = new Vector3(0, 180, 0);
             else if(Yon.x > 0)
@@ -49,6 +50,7 @@ public class Enemy : Entity
         }
         else
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        
 
     }
     protected override void OnDrawGizmos()
