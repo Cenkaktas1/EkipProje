@@ -20,6 +20,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float TouchingGround;
     [SerializeField] private bool IsGround;
     [SerializeField] private LayerMask GroundLayer;
+    [SerializeField] private int jumpCounter = 0;
 
     [Header("Attack")]
     [SerializeField] protected float AttackRadius;
@@ -51,7 +52,7 @@ public class Entity : MonoBehaviour
         }
         GroundCheck();
         Hareket();
-        jump();
+        jumpandFast();
         animationofPlayer();
         Attacking();
         IsDeathControl();
@@ -71,12 +72,16 @@ public class Entity : MonoBehaviour
         else if (yatayGirdi == 1 && IsAlive)
             transform.eulerAngles = new Vector2(0, 0);
     }
-    private void jump()
+    private void jumpandFast()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGround && control && IsAlive)
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && control && IsAlive && jumpCounter <= 1)
+        {   
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 10f);
+            jumpCounter++;
+            Debug.Log(jumpCounter);
+            Debug.Log(IsGround);
         }
+
         if (Input.GetKey(KeyCode.LeftShift) && IsGround && IsAlive) 
             hareketHizi = 10f;
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -160,6 +165,8 @@ public class Entity : MonoBehaviour
     protected virtual void GroundCheck()
     {
         IsGround = Physics2D.Raycast(transform.position, Vector2.down, TouchingGround, GroundLayer);
+        if (IsGround && rb.linearVelocity.y < 0.1f)
+            jumpCounter = 0;
     }
     protected void animationofPlayer()
     {   if (IsAlive)
