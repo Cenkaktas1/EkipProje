@@ -25,12 +25,12 @@ public class EnemyAttackControl : MonoBehaviour
     private void EnemyDedect() => enemy.TargetDedector();
     private void TakeDamage()
     {   
-        if(enemy.playerCheck)
+        if(enemy.playerCheck && entity.dashControl)
             entity.TakeDamage();
     }
     private void StartDamageAnimation()
     {
-        if (enemy.playerCheck)
+        if (enemy.playerCheck && entity.dashControl)
             entity.StartDamageAnimation();
     }
     private void PlayerDeath()
