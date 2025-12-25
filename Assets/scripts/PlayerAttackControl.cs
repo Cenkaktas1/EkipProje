@@ -13,7 +13,12 @@ public class PlayerAttackControl : MonoBehaviour
 
     // Bu fonksiyonlar animasyon event'leri tarafýndan tetikleniyor
     private void DisableMovement() => player.AttackControlTrue(false);
+
     private void EnableMovement() => player.AttackControlTrue(true);
 
     private void EnemyDedect() => player.TargetDedector();
+
+    private void DisableDamage() => player.DashControl(false);
+
+    private void EnableDamage() => player.DashControl(true);
 }

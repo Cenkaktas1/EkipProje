@@ -15,7 +15,8 @@ public class RespawnController : MonoBehaviour
 
         if(timer < 0)
         {
-            timer = cooldown;
+            timer = cooldown - 1.2f;
+            CreatNewEnemy();
             CreatNewEnemy();
         }
     }

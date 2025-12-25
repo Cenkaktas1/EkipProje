@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -14,6 +15,10 @@ public class Enemy : Entity
 
     [Header("Enemy Healt")]
     public int Health = 3;
+
+    [Header("Score")]
+    [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private static int totalkills = 0;
     protected override void Awake()
     {
         // Referans en bata alyoruz
@@ -22,6 +27,16 @@ public class Enemy : Entity
         FindPlayer = GameObject.FindWithTag("Player");
         FollowPlayer = FindPlayer.GetComponent<Transform>();
         IsAlive = false;
+
+        GameObject uiObj = GameObject.Find("Score");
+        if (uiObj != null)
+        {
+            score = uiObj.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadý!");
+        }
     }
     protected override void Update()
     {
@@ -95,6 +110,8 @@ public class Enemy : Entity
 
     public override void Death()
     {
+        totalkills++;
+        score.text = "Score: " + totalkills;
         // 1. Durum güncellemesi
         IsAlive = false; // Artýk yaþamýyor
 

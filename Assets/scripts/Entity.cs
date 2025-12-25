@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class Entity : MonoBehaviour
 {
-    //HAREKET
+    [Header("MOVEMENT")]
     [SerializeField] protected float hareketHizi = 6f;
     private float yatayGirdi;       
     protected Rigidbody2D rb;
     protected bool control = true;
     protected float EnemyX = 1;
+    [SerializeField] public bool dashControl = true;
 
-    //ANİMASYON
+    [Header("ANIMATION")]
     [SerializeField] protected Animator animator;
     [SerializeField] private Animator animator2;
 
-    //ZIPLAMAKONTROL
+    [Header("JumpControl")]
     [SerializeField] protected float TouchingGround;
     [SerializeField] private bool IsGround;
     [SerializeField] private LayerMask GroundLayer;
@@ -108,16 +109,14 @@ public class Entity : MonoBehaviour
 
         // 2. Bulunan her bir obje için işlem yap
         foreach (Collider2D enemyCollider in hitEnemies)
-        {
-            // 3. Çarptığımız objenin üzerindeki "Enemy" scriptini al
-            // (Bu sayede kopyasına vurduysak kopyasının scriptini, ana objeye vurduysak onun scriptini alırız)
+        {           
             Enemy hitEnemy = enemyCollider.GetComponent<Enemy>();
 
             if (hitEnemy != null)
             {
                 // 4. Sadece bulduğumuz O düşmana hasar ver
                 hitEnemy.TakeDamage();
-                hitEnemy.StartDamageAnimation(); // Eğer animasyonu da buradan tetikliyorsan
+                hitEnemy.StartDamageAnimation();
             }
         }
     }
@@ -181,9 +180,9 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -TouchingGround, 0));
         Gizmos.DrawWireSphere(AttackPoint.position, AttackRadius);
     }
-    public void AttackControlTrue(bool hareket)
-    {
-        control = hareket;
-    }
+    public void AttackControlTrue(bool hareket) => control = hareket;
+
+    public void DashControl(bool dash) => dashControl = dash;
+
     protected virtual void IsDeathControl() => IsAlive = CanBarı.value < 100;
 }
