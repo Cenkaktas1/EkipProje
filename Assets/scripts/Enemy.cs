@@ -110,8 +110,8 @@ public class Enemy : Entity
 
     public override void Death()
     {
-        totalkills++;
-        score.text = "Score: " + totalkills;
+        //totalkills++;
+        //score.text = "Score: " + totalkills;
         // 1. Durum güncellemesi
         IsAlive = false; // Artýk yaþamýyor
 
