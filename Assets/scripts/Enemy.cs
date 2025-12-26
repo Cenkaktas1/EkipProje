@@ -35,14 +35,14 @@ public class Enemy : Entity
         }
         else
         {
-            Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadı!");
+            Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadÃ½!");
         }
     }
     protected override void Update()
     {
         if (animator.transform == null)
         {
-            // Player yok olmuş olabilir, bu yüzden transform'u kontrol ediyorsunuz...
+            // Player yok olmuÃ¾ olabilir, bu yÃ¼zden transform'u kontrol ediyorsunuz...
             return;
         }
         Hareket();
@@ -92,16 +92,16 @@ public class Enemy : Entity
 
     public override void TakeDamage()
     {
-        // Eğer zaten öldüyse tekrar hasar almasın
+        // EÃ°er zaten Ã¶ldÃ¼yse tekrar hasar almasÃ½n
         if (!IsAlive) return;
 
-        // Canı azalt
+        // CanÃ½ azalt
         Health -= 1;
 
         // Animasyonu tetikle (Hasar alma)
         animator.SetTrigger("TakeDamage");
 
-        // Eğer can 0 veya altına düştüyse ÖLÜMÜ BAŞLAT
+        // EÃ°er can 0 veya altÃ½na dÃ¼Ã¾tÃ¼yse Ã–LÃœMÃœ BAÃLAT
         if (Health <= 0)
         {
             Death();
@@ -112,28 +112,28 @@ public class Enemy : Entity
     {
         totalkills++;
         score.text = "Score: " + totalkills;
-        // 1. Durum güncellemesi
-        IsAlive = false; // Artık yaşamıyor
+        // 1. Durum gÃ¼ncellemesi
+        IsAlive = false; // ArtÃ½k yaÃ¾amÃ½yor
 
-        // 2. Ölüm Animasyonu
+        // 2. Ã–lÃ¼m Animasyonu
         animator.SetTrigger("Death");
         animator.SetBool("Alive", false);
 
-        // 3. Fiziksel Etkileşimi Kes (İsteğe bağlı ama önerilir)
-        // Düşman ölünce cesedine takılmamak veya tekrar vurmamak için Collider'ı kapatabilirsin
+        // 3. Fiziksel EtkileÃ¾imi Kes (ÃsteÃ°e baÃ°lÃ½ ama Ã¶nerilir)
+        // DÃ¼Ã¾man Ã¶lÃ¼nce cesedine takÃ½lmamak veya tekrar vurmamak iÃ§in Collider'Ã½ kapatabilirsin
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
         if (rb != null)
         {
-            rb.gravityScale = 0; // Yerçekimini sıfırla (Havada asılı kalsın)
-            rb.linearVelocity = Vector2.zero; // Eğer hareket halindeyse dursun
+            rb.gravityScale = 0; // YerÃ§ekimini sÃ½fÃ½rla (Havada asÃ½lÃ½ kalsÃ½n)
+            rb.linearVelocity = Vector2.zero; // EÃ°er hareket halindeyse dursun
 
-            // Alternatif olarak tamamen fiziği dondurmak için şunu da yapabilirsin:
+            // Alternatif olarak tamamen fiziÃ°i dondurmak iÃ§in Ã¾unu da yapabilirsin:
             // rb.bodyType = RigidbodyType2D.Kinematic; 
         }
 
-        // 4. YOK ETME (EN ÖNEMLİ KISIM)
-        // "gameObject" bu scriptin bağlı olduğu nesnedir.
+        // 4. YOK ETME (EN Ã–NEMLÃ KISIM)
+        // "gameObject" bu scriptin baÃ°lÃ½ olduÃ°u nesnedir.
         // 2.5f saniye bekler (animasyon bitsin diye), sonra kendini yok eder.
         Destroy(gameObject, 2.5f);
     }
