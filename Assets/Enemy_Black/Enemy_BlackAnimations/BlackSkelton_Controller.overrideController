@@ -6,18 +6,18 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: YellowSkelton_Controller
+  m_Name: BlackSkelton_Controller
   m_Controller: {fileID: 9100000, guid: fac159bc4007dfb4db1a2c26cb2520bd, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 7b31ba4ebe83da24a9e88fd95899159b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 93fe9c0d9cd775c4d85662f902d7c0b9, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 414dce53b6f04f244bbb4b54fcf0a1dc, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 7ce504e94a8672e48b55e715397c941e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d368347860d2ffc4ca55d73371373468, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7b31ba4ebe83da24a9e88fd95899159b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 65d7326ce3a935f4f834afc268862257, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 5d6c30daa08188b40ba83268564313f7, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 5fee4735f99682c4f9587d1ee923f775, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1fcef58b7d3fcb64e920e4961c504dfa, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: eb4340d978c4fcf44bce57dbb917c344, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d67124e91d43077469d6ccc1f0950c2e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7112944d9aa73b1458b8657836890845, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 4b7efd93178de9b4ea2ed03e6ed99894, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 516a8f9408856a64085531e94101e011, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 40f9236409d3f7843b554d1dc0786c85, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 3cb112929d7ec7b4798b251922851a54, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 0d9a72ad332fe5747be65a301438502d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 19f21517086306c458f7e3512541ac2e, type: 2}

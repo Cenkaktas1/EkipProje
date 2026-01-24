@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3176048372184142167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.31, y: 0.1, z: 0}
+  m_LocalPosition: {x: 1.48, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3884876156943941397}
   - component: {fileID: 4029957186083305551}
   m_Layer: 7
-  m_Name: Enemy_Yellow
+  m_Name: Enemy_Black
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   hareketHizi: 2.4
-  dashControl: 1
   animator: {fileID: 4415295250721507256}
   animator2: {fileID: 0}
   TouchingGround: 0
@@ -98,13 +97,12 @@ MonoBehaviour:
   "CanBar\u0131": {fileID: 0}
   text: {fileID: 0}
   IsAlive: 0
-  AttackGizmos: 2.43
+  AttackGizmos: 2.8
   playerCheck: 0
   Player:
     serializedVersion: 2
     m_Bits: 8
   Health: 3
-  score: {fileID: 0}
 --- !u!50 &3884876156943941397
 Rigidbody2D:
   serializedVersion: 5
@@ -166,8 +164,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.081519604, y: 0.2184509}
-  m_Size: {x: 1.3836031, y: 2.7194817}
+  m_Offset: {x: 0, y: -0.09404075}
+  m_Size: {x: 0.894485, y: 2.0944984}
   m_Direction: 0
 --- !u!1 &8306758178652221031
 GameObject:
@@ -250,12 +248,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7638371965328572490, guid: 7508474c5ab1914498c081564e9bccc4, type: 3}
+  m_Sprite: {fileID: -7638371965328572490, guid: 3110b873189097b46a517f6b33dab3f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.25, y: 2.9375}
+  m_Size: {x: 2, y: 2.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -271,7 +269,7 @@ Animator:
   m_GameObject: {fileID: 8306758178652221031}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b49ce105f93d3ff4dae964d0b90ad863, type: 2}
+  m_Controller: {fileID: 22100000, guid: b16f74074336b8e4498544ecadf62185, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

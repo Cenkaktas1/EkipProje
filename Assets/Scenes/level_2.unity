@@ -2163,50 +2163,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1679954593692029748, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: AttackGizmos
-      value: 2.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1679954593692029748, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: AttackRadius
-      value: 1.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3845183937648815389, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3845183937648815389, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3978089358064458807, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
       propertyPath: m_Name
       value: Enemy_Yellow
       objectReference: {fileID: 0}
-    - target: {fileID: 4029957186083305551, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Size.x
-      value: 1.3836031
-      objectReference: {fileID: 0}
-    - target: {fileID: 4029957186083305551, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Size.y
-      value: 2.7194817
-      objectReference: {fileID: 0}
-    - target: {fileID: 4029957186083305551, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.081519604
-      objectReference: {fileID: 0}
-    - target: {fileID: 4029957186083305551, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.2184509
-      objectReference: {fileID: 0}
-    - target: {fileID: 4415295250721507256, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: b16f74074336b8e4498544ecadf62185, type: 2}
-    - target: {fileID: 5363606124211754406, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7446206344923327547, guid: 6924bf29dee4a8242bd8d8be42618938, type: 3}
     - target: {fileID: 5874921028729426795, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.7
