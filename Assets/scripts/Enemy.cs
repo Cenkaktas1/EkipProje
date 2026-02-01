@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+
 public class Enemy : Entity
 {
     [Header("Enemy Attack")]
@@ -8,6 +9,8 @@ public class Enemy : Entity
     public bool playerCheck;
     public LayerMask Player;
 
+    [SerializeField] private Transform attackPoint; 
+   
     [Header("Enemy Movement")]
     private Transform FollowPlayer;
     private GameObject FindPlayer;
@@ -71,17 +74,22 @@ public class Enemy : Entity
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
+
+        Vector3 baslangic = (attackPoint != null) ? attackPoint.position : transform.position;
+
         if (transform.rotation.y == 0)
-            Gizmos.DrawLine(transform.position, transform.position + new Vector3(AttackGizmos, 0, 0));
+            Gizmos.DrawLine(baslangic, baslangic + new Vector3(AttackGizmos, 0, 0));
         else
-            Gizmos.DrawLine(transform.position, transform.position + new Vector3(-AttackGizmos, 0, 0));
+            Gizmos.DrawLine(baslangic, baslangic + new Vector3(-AttackGizmos, 0, 0));
     }
     private void PlayerCheck()
-    {   
+    {
+        Vector3 baslangic = (attackPoint != null) ? attackPoint.position : transform.position;
+
         if (transform.rotation.y == 0)
-            playerCheck = Physics2D.Raycast(transform.position, Vector2.right, AttackGizmos, Player);
+            playerCheck = Physics2D.Raycast(baslangic, Vector2.right, AttackGizmos, Player);
         else
-            playerCheck = Physics2D.Raycast(transform.position, Vector2.right, -AttackGizmos, Player);
+            playerCheck = Physics2D.Raycast(baslangic, Vector2.right, -AttackGizmos, Player);
     }
     protected override void Attacking()
     {   if (!IsAlive)

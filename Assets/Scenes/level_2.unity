@@ -2163,6 +2163,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1679954593692029748, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 1598062871}
+    - target: {fileID: 1679954593692029748, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
+      propertyPath: AttackGizmos
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3845183937648815389, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.35
@@ -2220,6 +2228,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
+--- !u!4 &1598062871 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3845183937648815389, guid: 0b2197bbe1340c74fa8ed3e2b5ea8595, type: 3}
+  m_PrefabInstance: {fileID: 1598062870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1615688094
 GameObject:
   m_ObjectHideFlags: 0
