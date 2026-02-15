@@ -21,7 +21,8 @@ public class Enemy : Entity
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI score;
-    [SerializeField] private static int totalkills = 0;
+    [SerializeField] public static int totalkills = 0;
+    [SerializeField] private GameObject uiObj;
     protected override void Awake()
     {
         // Referans en bata alyoruz
@@ -31,7 +32,7 @@ public class Enemy : Entity
         FollowPlayer = FindPlayer.GetComponent<Transform>();
         IsAlive = false;
 
-        GameObject uiObj = GameObject.Find("Score");
+        uiObj = GameObject.Find("Score");
         if (uiObj != null)
         {
             score = uiObj.GetComponent<TextMeshProUGUI>();
@@ -40,12 +41,12 @@ public class Enemy : Entity
         {
             Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadý!");
         }
+
     }
     protected override void Update()
     {
         if (animator.transform == null)
         {
-            // Player yok olmuþ olabilir, bu yüzden transform'u kontrol ediyorsunuz...
             return;
         }
         Hareket();
@@ -95,21 +96,23 @@ public class Enemy : Entity
     {   if (!IsAlive)
             return;
         if (playerCheck && IsAlive)
+        {
+            //audioSource.PlayOneShot(attackSound, 0.5f);
             animator.SetTrigger("Attack");
+        }
     }
 
     public override void TakeDamage()
     {
-        // Eðer zaten öldüyse tekrar hasar almasýn
         if (!IsAlive) return;
+        
+        if(Health > 1) audioSource.PlayOneShot(damageSound, 0.5f);
 
-        // Caný azalt
         Health -= 1;
 
         // Animasyonu tetikle (Hasar alma)
         animator.SetTrigger("TakeDamage");
 
-        // Eðer can 0 veya altýna düþtüyse ÖLÜMÜ BAÞLAT
         if (Health <= 0)
         {
             Death();
@@ -118,31 +121,30 @@ public class Enemy : Entity
 
     public override void Death()
     {
+        audioSource.PlayOneShot(deathSound, 1f);
+        totalkills++;
+        if (uiObj != null)
+        {
+            score.text = "Score: " + totalkills;
+        }
+        // 1. Durum g�ncellemesi
+        IsAlive = false;
         totalkills++;
         score.text = "Score: " + totalkills;
-        // 1. Durum güncellemesi
-        IsAlive = false; // Artýk yaþamýyor
+        IsAlive = false;
 
-        // 2. Ölüm Animasyonu
         animator.SetTrigger("Death");
         animator.SetBool("Alive", false);
 
-        // 3. Fiziksel Etkileþimi Kes (Ýsteðe baðlý ama önerilir)
-        // Düþman ölünce cesedine takýlmamak veya tekrar vurmamak için Collider'ý kapatabilirsin
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
         if (rb != null)
         {
-            rb.gravityScale = 0; // Yerçekimini sýfýrla (Havada asýlý kalsýn)
-            rb.linearVelocity = Vector2.zero; // Eðer hareket halindeyse dursun
+            rb.gravityScale = 0;
+            rb.linearVelocity = Vector2.zero;
 
-            // Alternatif olarak tamamen fiziði dondurmak için þunu da yapabilirsin:
-            // rb.bodyType = RigidbodyType2D.Kinematic; 
         }
 
-        // 4. YOK ETME (EN ÖNEMLÝ KISIM)
-        // "gameObject" bu scriptin baðlý olduðu nesnedir.
-        // 2.5f saniye bekler (animasyon bitsin diye), sonra kendini yok eder.
         Destroy(gameObject, 2.5f);
     }
     protected override void IsDeathControl() => IsAlive = Health > 0;

@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Entity : MonoBehaviour
 {
@@ -29,12 +30,23 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask Target;
     public Collider2D EnemiesCollider;
 
-    [Header("CanBarı")]
+    [Header("Sliders")]
     [SerializeField] protected Slider CanBarı;
     [SerializeField] protected TextMeshProUGUI text;
+    [SerializeField] private Slider Mana;
+    [SerializeField] private TextMeshProUGUI Uyari;
 
     [Header("Death")]
     [SerializeField] protected bool IsAlive;
+    public static int PlayerDeathCount = 0;
+    public static int SceneIndex;
+
+    [Header("AUDIO")]
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip damageSound;
+    [SerializeField] protected AudioClip deathSound;
+    [SerializeField] protected AudioClip walkSound;
+    [SerializeField] protected AudioClip attackSound;
 
     protected virtual void Awake()
     {
@@ -42,6 +54,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         CanBarı.value = 0;
         animator.SetBool("Alive", true);
+        SceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     protected virtual void Update()
@@ -51,6 +64,9 @@ public class Entity : MonoBehaviour
             // Player yok olmuş olabilir, bu yüzden transform'u kontrol ediyoruz
             return;
         }
+
+        Mana.value += Time.deltaTime * 10;
+
         GroundCheck();
         Hareket();
         jumpandFast();
@@ -75,12 +91,12 @@ public class Entity : MonoBehaviour
     }
     private void jumpandFast()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && control && IsAlive && jumpCounter <= 1)
-        {   
+        if (Input.GetKeyDown(KeyCode.W) && IsAlive && jumpCounter <= 1)
+        {
+            control = true;
+            animator.ResetTrigger("Attack");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 10f);
             jumpCounter++;
-            Debug.Log(jumpCounter);
-            Debug.Log(IsGround);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && IsGround && IsAlive) 
@@ -91,14 +107,23 @@ public class Entity : MonoBehaviour
 
     private void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.C) && IsAlive && IsGround && control)
-            animator.SetTrigger("Dash");
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Space) && IsAlive && IsGround)
+                animator.SetTrigger("Dash");
     }
 
     protected virtual void Attacking()
     {
-        if(Input.GetMouseButtonDown(0) && IsGround && IsAlive)
-                animator.SetTrigger("Attack");
+        if(Input.GetMouseButtonDown(0) && IsGround && IsAlive && Mana.value >=15)
+        {
+            audioSource.PlayOneShot(attackSound, 1f);
+            animator.SetTrigger("Attack");
+            Mana.value -= 15;   
+        }
+        if (Mana.value < 15)
+        {
+            ShowWarning();
+        }
     }
     // Entity.cs içinde (Player için çalışan kısım)
 
@@ -111,12 +136,18 @@ public class Entity : MonoBehaviour
         foreach (Collider2D enemyCollider in hitEnemies)
         {           
             Enemy hitEnemy = enemyCollider.GetComponent<Enemy>();
+            Archer hitArcher = enemyCollider.GetComponent<Archer>();
 
             if (hitEnemy != null)
             {
                 // 4. Sadece bulduğumuz O düşmana hasar ver
                 hitEnemy.TakeDamage();
                 hitEnemy.StartDamageAnimation();
+            }
+            if (hitArcher != null)
+            {
+                hitArcher.TakeDamage();
+                hitArcher.StartDamageAnimation();
             }
         }
     }
@@ -151,15 +182,22 @@ public class Entity : MonoBehaviour
             return;
         }
 
+        if(CanBarı.value > 15)
+        {
+            audioSource.PlayOneShot(damageSound, 0.5f);
+        }
+
         CanBarı.value += 15;
         text.text = $"{100 - CanBarı.value}";
         Debug.Log("Can barı güncellendi. Yeni Değer: " + CanBarı.value); // 4. Bu log görünüyor mu?
+
     }
     public virtual void Death()
-    {
+    {   
+        audioSource.PlayOneShot(deathSound);
         animator2.SetTrigger("Death");
-        //Destroy(gameObject);
         animator.SetBool("Alive", IsAlive);
+        PlayerDeathCount++;
     }
     protected virtual void GroundCheck()
     {
@@ -186,6 +224,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void IsDeathControl() => IsAlive = CanBarı.value < 100;
 
+
     public void Heal(int amount)
     {
      
@@ -207,4 +246,15 @@ public class Entity : MonoBehaviour
 
         
     }
+
+    public virtual void playWalkSound() => audioSource.PlayOneShot(walkSound, 0.25f);
+
+    public void ShowWarning()
+    {
+        Uyari.gameObject.SetActive(true);
+        Invoke(nameof(HideWarning), 1f);
+    }
+
+    private void HideWarning() => Uyari.gameObject.SetActive(false);
+
 }

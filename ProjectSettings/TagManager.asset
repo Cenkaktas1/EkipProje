@@ -7,6 +7,9 @@ TagManager:
   - Text
   - Enemy
   - Score
+  - Ground
+  - Wall
+  - Archer
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Ground
   - Enemy
   - Wall
-  - 
+  - Arrow
   - 
   - 
   - 
