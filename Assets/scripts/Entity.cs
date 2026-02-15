@@ -185,4 +185,26 @@ public class Entity : MonoBehaviour
     public void DashControl(bool dash) => dashControl = dash;
 
     protected virtual void IsDeathControl() => IsAlive = CanBarı.value < 100;
+
+    public void Heal(int amount)
+    {
+     
+        if (CanBarı == null) return;
+
+
+        CanBarı.value -= amount;
+
+
+        if (CanBarı.value < 0)
+        {
+            CanBarı.value = 0;
+        }
+
+        if (text != null)
+        {
+            text.text = $"{100 - CanBarı.value}";
+        }
+
+        
+    }
 }
