@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyAttackControl : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class EnemyAttackControl : MonoBehaviour
     private void DisableMovement() => enemy.AttackControlTrue(false);
     private void EnableMovement() => enemy.AttackControlTrue(true);
     private void EnemyDedect() => enemy.TargetDedector();
+    private void skeletonWalk() => enemy.playWalkSound();
     private void TakeDamage()
     {   
         if(enemy.playerCheck && entity.dashControl)
@@ -38,7 +40,8 @@ public class EnemyAttackControl : MonoBehaviour
         if (slider.value >= 100)
         {
             entity.Death();
-            Invoke(nameof(DestroyGameObject), 2.5f);
+            Invoke(nameof(DestroyGameObject), 2f);
+            Invoke(nameof(LoadMenu), 2f);
         }
     }
     private void DestroyGameObject()
@@ -46,5 +49,7 @@ public class EnemyAttackControl : MonoBehaviour
         GameObject destroyPlayer = GameObject.FindGameObjectWithTag("Player");
         GameObject.Destroy(destroyPlayer);
     }
+
+    private void LoadMenu() => SceneManager.LoadScene(0);
 }
 

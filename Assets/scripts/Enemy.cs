@@ -18,7 +18,8 @@ public class Enemy : Entity
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI score;
-    [SerializeField] private static int totalkills = 0;
+    [SerializeField] public static int totalkills = 0;
+    [SerializeField] private GameObject uiObj;
     protected override void Awake()
     {
         // Referans en bata alyoruz
@@ -28,21 +29,28 @@ public class Enemy : Entity
         FollowPlayer = FindPlayer.GetComponent<Transform>();
         IsAlive = false;
 
-        GameObject uiObj = GameObject.Find("Score");
+        uiObj = GameObject.Find("Score");
         if (uiObj != null)
         {
             score = uiObj.GetComponent<TextMeshProUGUI>();
         }
+<<<<<<< HEAD
+=======
         else
         {
             Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadý!");
         }
+>>>>>>> 9202e7a13a9c419df1006d1f3a9a62a88c1ac8dc
     }
     protected override void Update()
     {
         if (animator.transform == null)
         {
+<<<<<<< HEAD
+            // Player yok olmu� olabilir, bu y�zden transform'u kontrol ediyor
+=======
             // Player yok olmuþ olabilir, bu yüzden transform'u kontrol ediyorsunuz...
+>>>>>>> 9202e7a13a9c419df1006d1f3a9a62a88c1ac8dc
             return;
         }
         Hareket();
@@ -87,13 +95,18 @@ public class Enemy : Entity
     {   if (!IsAlive)
             return;
         if (playerCheck && IsAlive)
+        {
+            //audioSource.PlayOneShot(attackSound, 0.5f);
             animator.SetTrigger("Attack");
+        }
     }
 
     public override void TakeDamage()
     {
         // Eðer zaten öldüyse tekrar hasar almasýn
         if (!IsAlive) return;
+        
+        if(Health > 1) audioSource.PlayOneShot(damageSound, 0.5f);
 
         // Caný azalt
         Health -= 1;
@@ -110,10 +123,21 @@ public class Enemy : Entity
 
     public override void Death()
     {
+<<<<<<< HEAD
+        audioSource.PlayOneShot(deathSound, 1f);
+        totalkills++;
+        if (uiObj != null)
+        {
+            score.text = "Score: " + totalkills;
+        }
+        // 1. Durum g�ncellemesi
+        IsAlive = false; // Art�k ya�am�yor
+=======
         totalkills++;
         score.text = "Score: " + totalkills;
         // 1. Durum güncellemesi
         IsAlive = false; // Artýk yaþamýyor
+>>>>>>> 9202e7a13a9c419df1006d1f3a9a62a88c1ac8dc
 
         // 2. Ölüm Animasyonu
         animator.SetTrigger("Death");

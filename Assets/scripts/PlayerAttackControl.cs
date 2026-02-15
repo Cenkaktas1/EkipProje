@@ -1,4 +1,3 @@
-// PlayerAttackControl.cs
 using UnityEngine;
 
 public class PlayerAttackControl : MonoBehaviour
@@ -21,4 +20,6 @@ public class PlayerAttackControl : MonoBehaviour
     private void DisableDamage() => player.DashControl(false);
 
     private void EnableDamage() => player.DashControl(true);
+
+    private void walkingSound() => player.playWalkSound();
 }
