@@ -224,6 +224,29 @@ public class Entity : MonoBehaviour
 
     protected virtual void IsDeathControl() => IsAlive = CanBarı.value < 100;
 
+
+    public void Heal(int amount)
+    {
+     
+        if (CanBarı == null) return;
+
+
+        CanBarı.value -= amount;
+
+
+        if (CanBarı.value < 0)
+        {
+            CanBarı.value = 0;
+        }
+
+        if (text != null)
+        {
+            text.text = $"{100 - CanBarı.value}";
+        }
+
+        
+    }
+
     public virtual void playWalkSound() => audioSource.PlayOneShot(walkSound, 0.25f);
 
     public void ShowWarning()
@@ -233,4 +256,5 @@ public class Entity : MonoBehaviour
     }
 
     private void HideWarning() => Uyari.gameObject.SetActive(false);
+
 }
