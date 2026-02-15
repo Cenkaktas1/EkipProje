@@ -18,7 +18,8 @@ public class Enemy : Entity
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI score;
-    [SerializeField] private static int totalkills = 0;
+    [SerializeField] public static int totalkills = 0;
+    [SerializeField] private GameObject uiObj;
     protected override void Awake()
     {
         // Referans en bata alyoruz
@@ -28,21 +29,17 @@ public class Enemy : Entity
         FollowPlayer = FindPlayer.GetComponent<Transform>();
         IsAlive = false;
 
-        GameObject uiObj = GameObject.Find("Score");
+        uiObj = GameObject.Find("Score");
         if (uiObj != null)
         {
             score = uiObj.GetComponent<TextMeshProUGUI>();
-        }
-        else
-        {
-            Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadý!");
         }
     }
     protected override void Update()
     {
         if (animator.transform == null)
         {
-            // Player yok olmuþ olabilir, bu yüzden transform'u kontrol ediyorsunuz...
+            // Player yok olmuþ olabilir, bu yüzden transform'u kontrol ediyor
             return;
         }
         Hareket();
@@ -87,13 +84,18 @@ public class Enemy : Entity
     {   if (!IsAlive)
             return;
         if (playerCheck && IsAlive)
+        {
+            //audioSource.PlayOneShot(attackSound, 0.5f);
             animator.SetTrigger("Attack");
+        }
     }
 
     public override void TakeDamage()
     {
         // Eðer zaten öldüyse tekrar hasar almasýn
         if (!IsAlive) return;
+        
+        if(Health > 1) audioSource.PlayOneShot(damageSound, 0.5f);
 
         // Caný azalt
         Health -= 1;
@@ -110,8 +112,12 @@ public class Enemy : Entity
 
     public override void Death()
     {
-        //totalkills++;
-        //score.text = "Score: " + totalkills;
+        audioSource.PlayOneShot(deathSound, 1f);
+        totalkills++;
+        if (uiObj != null)
+        {
+            score.text = "Score: " + totalkills;
+        }
         // 1. Durum güncellemesi
         IsAlive = false; // Artýk yaþamýyor
 
