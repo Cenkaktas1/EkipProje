@@ -1451,11 +1451,17 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1571771365}
+  - {fileID: 1364841648}
   - {fileID: 2121007118}
+<<<<<<< HEAD
   - {fileID: 1172921868}
   - {fileID: 359849741}
   - {fileID: 91269606}
   m_Father: {fileID: 0}
+=======
+  m_Father: {fileID: 465513066}
+>>>>>>> 9202e7a13a9c419df1006d1f3a9a62a88c1ac8dc
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3052,11 +3058,19 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 900681155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 307.8063, y: 70}
   m_Pivot: {x: 0, y: 1}
+=======
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -454.75, y: 255.02}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+>>>>>>> 9202e7a13a9c419df1006d1f3a9a62a88c1ac8dc
 --- !u!1001 &3617642259389042122
 PrefabInstance:
   m_ObjectHideFlags: 0
