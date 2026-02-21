@@ -37,11 +37,6 @@ public class Enemy : Entity
         {
             score = uiObj.GetComponent<TextMeshProUGUI>();
         }
-        else
-        {
-            Debug.LogError("Sahne'de 'ScoreText' isminde bir obje bulunamadÃ½!");
-        }
-
     }
     protected override void Update()
     {
@@ -127,10 +122,6 @@ public class Enemy : Entity
         {
             score.text = "Score: " + totalkills;
         }
-        // 1. Durum güncellemesi
-        IsAlive = false;
-        totalkills++;
-        score.text = "Score: " + totalkills;
         IsAlive = false;
 
         animator.SetTrigger("Death");

@@ -98,6 +98,8 @@ MonoBehaviour:
   EnemiesCollider: {fileID: 0}
   "CanBar\u0131": {fileID: 0}
   text: {fileID: 0}
+  Mana: {fileID: 0}
+  Uyari: {fileID: 0}
   IsAlive: 0
   audioSource: {fileID: 6869204105263878354}
   damageSound: {fileID: 8300000, guid: 9e449f411e476254a974723074676316, type: 3}
@@ -109,6 +111,7 @@ MonoBehaviour:
   Player:
     serializedVersion: 2
     m_Bits: 8
+  attackPoint: {fileID: 0}
   Health: 3
   score: {fileID: 0}
   uiObj: {fileID: 0}
@@ -354,12 +357,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7446206344923327547, guid: 6924bf29dee4a8242bd8d8be42618938, type: 3}
+  m_Sprite: {fileID: -7638371965328572490, guid: 7508474c5ab1914498c081564e9bccc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2.6666667}
+  m_Size: {x: 2.25, y: 2.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -375,7 +378,7 @@ Animator:
   m_GameObject: {fileID: 8306758178652221031}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b16f74074336b8e4498544ecadf62185, type: 2}
+  m_Controller: {fileID: 22100000, guid: b49ce105f93d3ff4dae964d0b90ad863, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
