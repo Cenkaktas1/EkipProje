@@ -46,6 +46,13 @@ public class RespawnController : MonoBehaviour
             CreatNewEnemy();
         }
 
+        else if (timer < 0 && level == "3" && totalEnemy < limit)
+        {
+            timer = level_1_cooldown;
+            CreatNewEnemy();
+            CreatNewEnemy();
+        }
+
         else if (timer < 0 && level == "4" && totalEnemy < limit)
         {   
             timer = level_1_cooldown;
