@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 414c272d248508b4aa76772c6428adbe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7288871504934990656
+    second: bossDeath-Photoroom_0
+  - first:
+      213: -5414173057359490292
+    second: bossDeath-Photoroom_1
+  - first:
+      213: -4162900997099614582
+    second: bossDeath-Photoroom_2
+  - first:
+      213: -3485686599191341591
+    second: bossDeath-Photoroom_3
+  - first:
+      213: 5522036125639662734
+    second: bossDeath-Photoroom_4
+  - first:
+      213: -5622958279838236145
+    second: bossDeath-Photoroom_5
+  - first:
+      213: -1823722912626144120
+    second: bossDeath-Photoroom_6
+  - first:
+      213: 6578468253750465084
+    second: bossDeath-Photoroom_7
+  - first:
+      213: 6218095863092473760
+    second: bossDeath-Photoroom_8
+  - first:
+      213: -1207671648574129007
+    second: bossDeath-Photoroom_9
+  - first:
+      213: 6460579515453364930
+    second: bossDeath-Photoroom_10
+  - first:
+      213: 4253465064009583093
+    second: bossDeath-Photoroom_11
+  - first:
+      213: -2397660114049950935
+    second: bossDeath-Photoroom_12
+  - first:
+      213: 3048867159447004337
+    second: bossDeath-Photoroom_13
+  - first:
+      213: -7641624714735595614
+    second: bossDeath-Photoroom_14
+  - first:
+      213: -5325095661050912625
+    second: bossDeath-Photoroom_15
+  - first:
+      213: -5676961449229593475
+    second: bossDeath-Photoroom_16
+  - first:
+      213: -2233748289075588938
+    second: bossDeath-Photoroom_17
+  - first:
+      213: -4718731545878855243
+    second: bossDeath-Photoroom_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2
+        width: 112
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc02eefbf9b8da90800000000000000
+      internalID: -7288871504934990656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 112
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03d8933a4efcd4b0800000000000000
+      internalID: -5414173057359490292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 3
+        width: 118
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e02c069976a36c0800000000000000
+      internalID: -4162900997099614582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 3
+        width: 136
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e55cd8818a50afc0800000000000000
+      internalID: -3485686599191341591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 3
+        width: 136
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c50a9699632ac40800000000000000
+      internalID: 5522036125639662734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 3
+        width: 138
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0286677c3d37f1b0800000000000000
+      internalID: -5622958279838236145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 3
+        width: 134
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c8d286ca5d0b6e0800000000000000
+      internalID: -1823722912626144120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 72
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c321bf6c50a6b4b50800000000000000
+      internalID: 6578468253750465084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 78
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afe3fa1e3d1b4650800000000000000
+      internalID: 6218095863092473760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 66
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cbd6db80d7d3fe0800000000000000
+      internalID: -1207671648574129007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_10
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 65
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca53c5f6d698a950800000000000000
+      internalID: 6460579515453364930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 3
+        width: 109
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f943dc90f7570b30800000000000000
+      internalID: 4253465064009583093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 62
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b1ee164dcc9bed0800000000000000
+      internalID: -2397660114049950935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 27
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b461362780cf4a20800000000000000
+      internalID: 3048867159447004337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 5
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afc65b1fce73f590800000000000000
+      internalID: -7641624714735595614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_15
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 5
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f802618b5b57916b0800000000000000
+      internalID: -5325095661050912625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_16
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 4
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d745517c3a16731b0800000000000000
+      internalID: -5676961449229593475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_17
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 3
+        width: 61
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0530814c12001e0800000000000000
+      internalID: -2233748289075588938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossDeath-Photoroom_18
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 4
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b10671f8a2b38eb0800000000000000
+      internalID: -4718731545878855243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bossDeath-Photoroom_0: -7288871504934990656
+      bossDeath-Photoroom_1: -5414173057359490292
+      bossDeath-Photoroom_10: 6460579515453364930
+      bossDeath-Photoroom_11: 4253465064009583093
+      bossDeath-Photoroom_12: -2397660114049950935
+      bossDeath-Photoroom_13: 3048867159447004337
+      bossDeath-Photoroom_14: -7641624714735595614
+      bossDeath-Photoroom_15: -5325095661050912625
+      bossDeath-Photoroom_16: -5676961449229593475
+      bossDeath-Photoroom_17: -2233748289075588938
+      bossDeath-Photoroom_18: -4718731545878855243
+      bossDeath-Photoroom_2: -4162900997099614582
+      bossDeath-Photoroom_3: -3485686599191341591
+      bossDeath-Photoroom_4: 5522036125639662734
+      bossDeath-Photoroom_5: -5622958279838236145
+      bossDeath-Photoroom_6: -1823722912626144120
+      bossDeath-Photoroom_7: 6578468253750465084
+      bossDeath-Photoroom_8: 6218095863092473760
+      bossDeath-Photoroom_9: -1207671648574129007
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
