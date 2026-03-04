@@ -385,8 +385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RespawnController
   RespawnTransform:
   - {fileID: 1930796727}
-  - {fileID: 89691929}
-  - {fileID: 1574216095}
   - {fileID: 827068004}
   - {fileID: 652876328}
   EnemyPrefab: {fileID: 3978089358064458807, guid: 6b511cc50f3d3c343b39a389170611f6, type: 3}
@@ -2225,7 +2223,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.6850376, y: 0.3336401}
+  m_Offset: {x: 0.69181657, y: 0.15219927}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2235,7 +2233,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.854436, y: 1.6672802}
+  m_Size: {x: 3.7119184, y: 1.3043985}
   m_EdgeRadius: 0
 --- !u!1 &1244828231
 GameObject:

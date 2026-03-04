@@ -26,7 +26,8 @@ public class MainMenu : MonoBehaviour
             LevelPanel.SetActive(false);
             GameOverPanel.SetActive(true);
         }
-            SesAyarý.value = ses;
+        SesAyarý.value = ses;
+        Enemy.totalkills = 0;
     }
 
     private void Update()
