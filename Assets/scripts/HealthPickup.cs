@@ -41,7 +41,6 @@ public class HealthPickup : MonoBehaviour
         }
 
         // 2. AÞAÐI YUKARI SÜZÜLME ÝÞLEMÝ
-        // Time.time ile sürekli artan bir deðer vererek -1 ile 1 arasýnda yumuþak bir dalga üretiyoruz.
         float yeniY = baslangicPozisyonu.y + Mathf.Sin(Time.time * dalgaFrekansi) * dalgaGenligi;
 
         transform.position = new Vector3(transform.position.x, yeniY, transform.position.z);

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Enemy : Entity
@@ -23,6 +24,11 @@ public class Enemy : Entity
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] public static int totalkills = 0;
     [SerializeField] private GameObject uiObj;
+
+    [Header("BOSS")]
+    [SerializeField] private Slider bossHealthBar;
+    public int sayac = 0;
+
     protected override void Awake()
     {
         // Referans en bata alyoruz
@@ -37,6 +43,7 @@ public class Enemy : Entity
         {
             score = uiObj.GetComponent<TextMeshProUGUI>();
         }
+        sayac = 0;
     }
     protected override void Update()
     {
@@ -105,13 +112,21 @@ public class Enemy : Entity
 
         Health -= 1;
 
-        // Animasyonu tetikle (Hasar alma)
         animator.SetTrigger("TakeDamage");
+
+        if (bossHealthBar)
+        {
+            bossHealthBar.value--;
+            SummonEnemy();
+        }
+
+        // Animasyonu tetikle (Hasar alma)
 
         if (Health <= 0)
         {
             Death();
         }
+
     }
 
     public override void Death()
@@ -139,4 +154,22 @@ public class Enemy : Entity
         Destroy(gameObject, 2.5f);
     }
     protected override void IsDeathControl() => IsAlive = Health > 0;
+
+    public void SummonEnemy()
+    {
+        if (Health == 18 && sayac == 0)
+        {
+            animator.SetTrigger("Summon");
+        }
+
+        if (Health == 12 && sayac == 1)
+        {
+            animator.SetTrigger("Summon");
+        }
+
+        if (Health == 6 && sayac == 2)
+        {
+            animator.SetTrigger("Summon");
+        }
+    }
 }

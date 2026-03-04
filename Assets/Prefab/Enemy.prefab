@@ -98,6 +98,8 @@ MonoBehaviour:
   EnemiesCollider: {fileID: 0}
   "CanBar\u0131": {fileID: 0}
   text: {fileID: 0}
+  Mana: {fileID: 0}
+  Uyari: {fileID: 0}
   IsAlive: 0
   audioSource: {fileID: 5840447970445927900}
   damageSound: {fileID: 8300000, guid: 9e449f411e476254a974723074676316, type: 3}
@@ -109,9 +111,11 @@ MonoBehaviour:
   Player:
     serializedVersion: 2
     m_Bits: 8
+  attackPoint: {fileID: 0}
   Health: 3
   score: {fileID: 0}
   uiObj: {fileID: 0}
+  bossHealthBar: {fileID: 0}
 --- !u!50 &3884876156943941397
 Rigidbody2D:
   serializedVersion: 5

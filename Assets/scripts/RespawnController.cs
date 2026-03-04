@@ -12,6 +12,11 @@ public class RespawnController : MonoBehaviour
     [SerializeField] private int limit;
     [SerializeField] private static int totalEnemy = 0;
     [SerializeField] private string level;
+
+    [Header("Enemy Boyz")]
+    [SerializeField] private Enemy enemy;
+    [SerializeField] private GameObject BoyzPrefab;
+
     private float cooldown = 15;
     private float level_1_cooldown = 6;
     private float timer;
@@ -60,6 +65,31 @@ public class RespawnController : MonoBehaviour
             CreatNewEnemy();
         }
 
+        else if (level == "5" && totalEnemy < limit)
+        {
+            if(enemy.Health == 18 && enemy.sayac == 0)
+            {
+                CreateBoyz(0.50f);
+                CreateBoyz(1.9f);
+                enemy.sayac++;
+            }
+
+            else if(enemy.Health == 12 && enemy.sayac == 1)
+            {
+                CreateBoyz(0.50f);
+                CreateBoyz(1.9f);
+                enemy.sayac++;
+            }
+    
+            else if(enemy.Health == 6 && enemy.sayac == 2)
+            {
+                CreateBoyz(0.50f);
+                CreateBoyz(1.9f);
+                enemy.sayac++;
+            }
+
+        }
+
         else if (Enemy.totalkills > limit)
         {
             Entity.PlayerDeathCount = 0;
@@ -80,4 +110,15 @@ public class RespawnController : MonoBehaviour
     }
 
     private void loadMenu() => SceneManager.LoadScene(0);
+
+    private void CreateBoyz(float x)
+    {
+        Vector3 SpawnPoint = RespawnTransform[0].position;
+        SpawnPoint.x += x;
+        SpawnPoint.y -= 4.80f;
+        GameObject NewEnemy = Instantiate(BoyzPrefab, SpawnPoint, Quaternion.identity);
+        Enemy Newa = NewEnemy.GetComponent<Enemy>();
+        Newa.Health = 3;
+        totalEnemy++;
+    }
 }

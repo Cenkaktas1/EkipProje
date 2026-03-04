@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BossTakeDamage
+  m_Name: b_EnemyMove
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 3727384308812789924, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
+      value: {fileID: -7553919144398233694, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
     - time: 0.125
-      value: {fileID: -8539039799651471650, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
+      value: {fileID: 4524147487103425511, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
     - time: 0.25
-      value: {fileID: -6925164100507086355, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
+      value: {fileID: 5689154931273053144, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 3727384308812789924, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
-    - {fileID: -8539039799651471650, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
-    - {fileID: -6925164100507086355, guid: 5fe8d448ef364cb4a95a6a70f0144608, type: 3}
+    - {fileID: -7553919144398233694, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
+    - {fileID: 4524147487103425511, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
+    - {fileID: 5689154931273053144, guid: ab079b47d8a3e6d4ba0dffd79520934f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -77,14 +77,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: DisableMovement
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.25
-    functionName: EnableMovement
+    functionName: skeletonWalk
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
