@@ -22,26 +22,26 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -431350012802067399, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.125
+    - time: 0.1
       value: {fileID: 5094587158933884339, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.25
+    - time: 0.2
       value: {fileID: 3506835525591209036, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.375
+    - time: 0.3
       value: {fileID: -4350987992622139200, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.5
+    - time: 0.4
       value: {fileID: 8083084915722362633, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.625
+    - time: 0.5
       value: {fileID: -7406771184778475815, guid: 7f7aeda2cf1bca5479b43b97d9638790, type: 3}
-    - time: 0.875
+    - time: 0.7
       value: {fileID: -4255636112639537241, guid: 0c00b6ed23c141943a1ee722dbfcbc87, type: 3}
-    - time: 1.25
+    - time: 1
       value: {fileID: -2455401609786101069, guid: 0c00b6ed23c141943a1ee722dbfcbc87, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 8
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.375
+    m_StopTime: 1.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -98,28 +98,28 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.3
     functionName: StartDamageAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.3
     functionName: EnemyDedect
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.3
     functionName: TakeDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.625
+  - time: 0.5
     functionName: EnableMovement
     data: 
     objectReferenceParameter: {fileID: 0}

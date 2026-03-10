@@ -390,6 +390,8 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 3978089358064458807, guid: 6b511cc50f3d3c343b39a389170611f6, type: 3}
   limit: 10
   level: 3
+  enemy: {fileID: 0}
+  BoyzPrefab: {fileID: 0}
 --- !u!1 &284159138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1285,7 @@ Transform:
   m_GameObject: {fileID: 652876327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.84, y: -12.08, z: 0}
+  m_LocalPosition: {x: 6.06, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
