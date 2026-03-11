@@ -1977,6 +1977,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
   healAmount: 15
+  yEksenindeDon: 1
+  donmeHizi: 150
+  paraDonmeHizi: 5
+  dalgaFrekansi: 2
+  dalgaGenligi: 0.25
 --- !u!61 &1380464608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2702,6 +2707,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
   healAmount: 15
+  yEksenindeDon: 1
+  donmeHizi: 150
+  paraDonmeHizi: 5
+  dalgaFrekansi: 2
+  dalgaGenligi: 0.25
 --- !u!61 &1640373503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3120,6 +3130,8 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 3978089358064458807, guid: 65dc237ce2fe5cb448cfb573c3e913ef, type: 3}
   limit: 12
   level: 1
+  enemy: {fileID: 0}
+  BoyzPrefab: {fileID: 0}
 --- !u!4 &1836570336
 Transform:
   m_ObjectHideFlags: 0
@@ -3208,6 +3220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
   healAmount: 15
+  yEksenindeDon: 1
+  donmeHizi: 150
+  paraDonmeHizi: 5
+  dalgaFrekansi: 2
+  dalgaGenligi: 0.25
 --- !u!61 &2062477833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3343,6 +3360,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1571771366}
+    - target: {fileID: 1679954593692029748, guid: 65dc237ce2fe5cb448cfb573c3e913ef, type: 3}
+      propertyPath: AttackGizmos
+      value: 2.65
+      objectReference: {fileID: 0}
     - target: {fileID: 3978089358064458807, guid: 65dc237ce2fe5cb448cfb573c3e913ef, type: 3}
       propertyPath: m_Name
       value: Enemy

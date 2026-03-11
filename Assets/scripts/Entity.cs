@@ -40,7 +40,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected bool IsAlive;
     public static int PlayerDeathCount = 0;
     public static int SceneIndex;
-
+    bool isdead = false;
     [Header("AUDIO")]
     [SerializeField] protected AudioSource audioSource;
     [SerializeField] protected AudioClip damageSound;
@@ -48,6 +48,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected AudioClip walkSound;
     [SerializeField] protected AudioClip attackSound;
 
+    
     protected virtual void Awake()
     {
 
@@ -137,7 +138,7 @@ public class Entity : MonoBehaviour
         {           
             Enemy hitEnemy = enemyCollider.GetComponent<Enemy>();
             Archer hitArcher = enemyCollider.GetComponent<Archer>();
-
+            
             if (hitEnemy != null)
             {
                 // 4. Sadece bulduğumuz O düşmana hasar ver
@@ -193,11 +194,16 @@ public class Entity : MonoBehaviour
 
     }
     public virtual void Death()
-    {   
+    {
+        if (isdead) return;
         audioSource.PlayOneShot(deathSound);
         animator2.SetTrigger("Death");
         animator.SetBool("Alive", IsAlive);
         PlayerDeathCount++;
+        print("yarkın");
+        isdead = true;
+
+      
     }
     protected virtual void GroundCheck()
     {

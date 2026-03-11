@@ -18,7 +18,7 @@ public class RespawnController : MonoBehaviour
     [SerializeField] private GameObject BoyzPrefab;
 
     private float cooldown = 15;
-    private float level_1_cooldown = 6;
+    private float level_1_cooldown = 12;
     private float timer;
 
     private void Awake()
